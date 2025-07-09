@@ -16,11 +16,11 @@ function Main() {
         {/* </div> */}
 
         <div className="px-5 py-3">
-          <div className="flex flex-col gap-40">
+          <div className="flex flex-col space-y-[8%]">
             <div className="">
               <Navbar />
             </div>
-            <div className="mt-16 md:mt-7 md:pb-10">
+            <div className="mt-16 md:mt-[0%] md:pb-10">
               <Hero />
             </div>
             <div className="flex justify-center">
@@ -42,7 +42,7 @@ function Main() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 inset-0 z-[-1] overflow-hidden">
+        <div className="absolute top-0 inset-0 z-[-1] overflow-hidden h-screen">
           <Bubble />
         </div>
       </div>

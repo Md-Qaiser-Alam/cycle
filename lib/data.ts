@@ -38,7 +38,7 @@ export const bubbleConfig = [
     name: "Loom",
     src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d17395c7fb305b06162_bulle-loom-min.svg",
     className: "loom",
-    pcClass: "md:absolute md:top-[10%] md:left-[15%]",
+    pcClass: "md:absolute md:top-[105%] md:right-[-45%]",
     mobClass: "bottom-[-3%] left-[35%]",
   },
   {
@@ -52,7 +52,7 @@ export const bubbleConfig = [
     name: "Google Doc",
     src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d08a60e12fc73031dbc_bulle-doc-min.svg",
     className: "googledoc",
-    pcClass: "md:absolute md:top-[10%] md:left-[15%]",
+    pcClass: "md:absolute md:top-[125%] md:right-[25%]",
     mobHidden: true,
   },
   {
