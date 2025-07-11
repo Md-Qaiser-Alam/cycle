@@ -29,7 +29,7 @@ function DropdownContent({ currentIconSelect, setCurrentIconSelect }: any) {
           />
         </div>
       </div>
-      <div className="flex justify-items-end  scale-[165%] pl-[6.5rem] md:pl-0  md:scale-100 md:grid grid-cols-4 grid-rows-3">
+      <div className="flex justify-items-end  scale-[165%] pl-[4.5rem] md:pl-0  md:scale-100 md:grid grid-cols-4 grid-rows-3">
         {bubbleConfig.map((e, i) => {
           if (isMobile && e.mobHidden) return null;
 
