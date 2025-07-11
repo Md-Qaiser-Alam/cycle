@@ -1,86 +1,155 @@
 export const bubbleConfig = [
   {
     name: "Video",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee24d0e6e8f19d66230c49_bulle-video-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee24d0e6e8f19d66230c49_bulle-video-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65efb7064fd4fe6184c9f7ff_Feedback%20Preview%20(1).jpg",
     className: "video",
-    pcClass: "md:absolute md:top-[25%] md:left-[15%]",
     mobHidden: true,
+    browserInitialX: -650,
+    browserInitialY: -330,
+    mobileInitialX: -100,
+    mobileInitialY: -270,
   },
   {
     name: "Pdf",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2967a60e12fc73016540_bulle-pdf-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2967a60e12fc73016540_bulle-pdf-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee4412e4f132cab47318ee_Feedback%20Preview.svg",
     className: "pdf",
-    pcClass: "md:absolute md:top-[25%] md:right-[15%]",
-    mobClass: "top-[17%] right-[-5%]",
+    mobHidden: false,
+
+    browserInitialX: 600,
+    browserInitialY: -300,
+    mobileInitialX: 100,
+    mobileInitialY: -260,
   },
   {
     name: "Intercom",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f0905f0598c5d524e19953_intercom-svg-55.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f0905f0598c5d524e19953_intercom-svg-55.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee44cc66cb99503d120ab9_Feedback-Preview-inter.svg",
     className: "intercom",
-    pcClass: "md:absolute md:top-[60%] md:left-[24%]",
-    mobClass: "top-[72%] left-[0%]",
+    browserInitialX: -400,
+    browserInitialY: -200,
+    mobileInitialX: -140,
+    mobileInitialY: -10,
   },
   {
     name: "Gong",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d3390a45f05abab603e_bulle-gong-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d3390a45f05abab603e_bulle-gong-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65d9249b5c9df5b59786edbb_gong.svg",
     className: "gong",
-    pcClass: "md:absolute md:top-[10%] md:left-[15%]",
     mobHidden: true,
+    browserInitialX: 400,
+    browserInitialY: -150,
+    mobileInitialX: 450,
+    mobileInitialY: -100,
   },
   {
     name: "Notion",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f08e264e6e45eebe501634_bubble-notion-55.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f08e264e6e45eebe501634_bubble-notion-55.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee45159d94c555ff778e4e_Feedback%20Previewnotion.svg",
     className: "notion",
-    pcClass: "md:absolute md:top-[80%] md:left-[10%]",
-    mobClass: "top-[15%] left-[2%]",
+    browserInitialX: -650,
+    browserInitialY: -50,
+    mobileInitialX: -140,
+    mobileInitialY: -250,
   },
   {
     name: "Loom",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d17395c7fb305b06162_bulle-loom-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d17395c7fb305b06162_bulle-loom-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee46a9d3d12aa8ef917b2d_Feedback%20Previewloom.svg",
     className: "loom",
-    pcClass: "md:absolute md:top-[105%] md:right-[-45%]",
-    mobClass: "bottom-[-3%] left-[35%]",
+    browserInitialX: 600,
+    browserInitialY: -50,
+    mobileInitialX: 0,
+    mobileInitialY: 50,
   },
   {
     name: "Hubspot",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65e8688d7b960748d82c3385_bubble-hubspot-06.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65e8688d7b960748d82c3385_bubble-hubspot-06.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee461e8b7e9b7aa4dbd2ba_Feedback%20Previewhubspot.svg",
     className: "hubspot",
-    pcClass: "md:absolute md:top-[100%] md:left-[23%]",
     mobHidden: true,
+    browserInitialX: -400,
+    browserInitialY: 50,
+    mobileInitialX: -450,
+    mobileInitialY: 50,
   },
   {
     name: "Google Doc",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d08a60e12fc73031dbc_bulle-doc-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2d08a60e12fc73031dbc_bulle-doc-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee4827d9a1a95a5f9563ef_Feedback%20Previewdoc.svg",
     className: "googledoc",
-    pcClass: "md:absolute md:top-[125%] md:right-[25%]",
     mobHidden: true,
+    browserInitialX: 400,
+    browserInitialY: 150,
+    mobileInitialX: 400,
+    mobileInitialY: 180,
   },
   {
     name: "Slack",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee28c91b05646be25768a0_bubble-slack-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee28c91b05646be25768a0_bubble-slack-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee47f2e4f132cab4753279_Feedback%20Previewslack.svg",
     className: "slack",
-    pcClass: "md:absolute md:top-[130%] md:left-[28%]",
-    mobClass: "top-[72%] right-[-5%]",
-  },
-  {
-    name: "Tally",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f0939a58818934b3af490d_tally-55-5.svg",
-    className: "tally",
-    pcClass: "md:absolute md:top-[138%] md:left-[55%]",
-    mobHidden: true,
+    browserInitialX: -350,
+    browserInitialY: 200,
+    mobileInitialX: 140,
+    mobileInitialY: -10,
   },
   {
     name: "Image",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2cc18df7cc2fd832f541_bulle-img-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2cc18df7cc2fd832f541_bulle-img-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee4721f020f21a863b0751_Feedback%20Preview%20(1).svg",
     className: "img",
-    pcClass: "md:absolute md:top-[120%] md:left-[12%]",
     mobHidden: true,
+    browserInitialX: -650,
+    browserInitialY: 150,
+    mobileInitialX: -600,
+    mobileInitialY: 180,
   },
   {
     name: "Audio",
-    src: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2cda6ef1975f6b380e4d_bulle-voice-min.svg",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee2cda6ef1975f6b380e4d_bulle-voice-min.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee3f445ad4c94ebab9a4e9_audio-feedback-preview.svg",
     className: "audio",
-    pcClass: "md:absolute md:top-[128%] md:left-[42%]",
     mobHidden: true,
+    browserInitialX: -100,
+    browserInitialY: 170,
+    mobileInitialX: -100,
+    mobileInitialY: 200,
+  },
+  {
+    name: "Tally",
+    iconSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f0939a58818934b3af490d_tally-55-5.svg",
+    bannerSrc:
+      "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee476c8b7e9b7aa4dc66a1_Feedback%20Previewtally.svg",
+    className: "tally",
+    mobHidden: true,
+    browserInitialX: 0,
+    browserInitialY: 0,
+    mobileInitialX: 0,
+    mobileInitialY: 0,
   },
 ];

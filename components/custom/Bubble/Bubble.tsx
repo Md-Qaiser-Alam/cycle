@@ -1,25 +1,58 @@
 "use client";
 import { bubbleConfig } from "@/lib/data";
-import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState, type RefObject } from "react";
+import { isBrowser, isMobile } from "react-device-detect";
 
-function Bubble() {
+type Tprops = {
+  containerRef: RefObject<HTMLElement | null>;
+};
+
+function Bubble({ containerRef }: Tprops) {
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // if (!mounted) return;
+
   return (
-    <div className="relative w-full h-[600px]">
-      {" "}
-      {/* Adjust height as needed */}
-      {bubbleConfig.map((e, i) => (
-        <Image
-          key={i}
-          src={e.src}
-          alt={e.name}
-          width={120}
-          height={120}
-          className={`absolute ${e.mobHidden ? "hidden lg:block" : ""}  ${
-            e?.mobClass
-          } md:${e.pcClass}`}
-        />
-      ))}
-    </div>
+    <>
+      {bubbleConfig.map((e, i) => {
+        const x = useTransform(
+          scrollYProgress,
+          [0, 0.5],
+          [
+            `${e[`${isBrowser ? "browserInitialX" : "mobileInitialX"}`]}px`, // for responsiveness
+            "0px",
+          ]
+        );
+        const y = useTransform(
+          scrollYProgress,
+          [0, 0.5],
+          [
+            `${e[`${isBrowser ? "browserInitialY" : "mobileInitialY"}`]}px`,
+            "0px",
+          ] // for responsiveness
+        );
+        const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+        if (i === bubbleConfig.length - 1 || (isMobile && e?.mobHidden)) return;
+
+        return (
+          <motion.img
+            key={i}
+            src={e.iconSrc}
+            className="absolute"
+            style={{ x, y, scale: isBrowser ? scale : 1 }}
+          />
+        );
+      })}
+    </>
   );
 }
 

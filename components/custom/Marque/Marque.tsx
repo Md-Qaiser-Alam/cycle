@@ -50,6 +50,10 @@ const clientsData = [
     name: "Passionfroot",
     img: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f44f9e6356e70fa620b49d_passionfroot.svg",
   },
+  {
+    name: "Noona",
+    img: "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65f45761c185cb6eeacc38a6_noona.svg",
+  },
 ];
 
 export default function MarqueSection() {
