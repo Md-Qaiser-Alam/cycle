@@ -48,7 +48,7 @@ function Bubble({ containerRef }: Tprops) {
             key={i}
             src={e.iconSrc}
             className="absolute"
-            style={{ x, y, scale: isBrowser ? scale : 1 }}
+            style={{ x, y, scale: isBrowser ? scale : 0.8 }}
           />
         );
       })}
