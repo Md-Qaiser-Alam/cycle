@@ -60,7 +60,7 @@ export const bubbleConfig = [
     browserInitialX: -580,
     browserInitialY: -60,
     mobileInitialX: -110,
-    mobileInitialY: -620,
+    mobileInitialY: -640,
   },
   {
     name: "Loom",
@@ -109,7 +109,7 @@ export const bubbleConfig = [
     className: "slack",
     browserInitialX: -300,
     browserInitialY: 200,
-    mobileInitialX: 120,
+    mobileInitialX: 110,
     mobileInitialY: -430,
   },
   {
