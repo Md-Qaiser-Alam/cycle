@@ -45,17 +45,25 @@ function Bubble({ containerRef, dropdownContentRef }: Tprops) {
         const start = isBrowser ? pairIndex * step * (1 - overlapRatio) : 0;
         const end = isBrowser ? start + step : 0.5;
 
-        const scrollX = useTransform(
-          scrollYProgress,
-          [start, end],
-          [`${e[isBrowser ? "browserInitialX" : "mobileInitialX"]}%`, "0%"]
-        );
-        const scrollY = useTransform(
-          scrollYProgress,
-          [start, end],
-          [`${e[isBrowser ? "browserInitialY" : "mobileInitialY"]}%`, "0%"]
-        );
-        const scale = useTransform(scrollYProgress, [start, end], [1, 0]);
+        const scrollX = isBrowser
+          ? useTransform(
+              scrollYProgress,
+              [start, end],
+              [`${e.browserInitialX}%`, "0%"]
+            )
+          : undefined;
+
+        const scrollY = isBrowser
+          ? useTransform(
+              scrollYProgress,
+              [start, end],
+              [`${e.browserInitialY}%`, "0%"]
+            )
+          : undefined;
+
+        const scale = isBrowser
+          ? useTransform(scrollYProgress, [start, end], [1, 0])
+          : 0.9;
 
         // motion values for drag position with initial values as numbers
         const initialX = e[isBrowser ? "browserInitialX" : "mobileInitialX"];
@@ -137,9 +145,9 @@ function Bubble({ containerRef, dropdownContentRef }: Tprops) {
                 src={e.iconSrc}
                 className="absolute touch-none cursor-grab active:cursor-grabbing"
                 style={{
-                  x: isDragging ? `${x.get()}%` : scrollX,
-                  y: isDragging ? `${y.get()}%` : scrollY,
-                  scale: isBrowser ? scale : 0.9,
+                  x: isDragging ? `${x.get()}%` : scrollX ?? `${initialX}%`,
+                  y: isDragging ? `${y.get()}%` : scrollY ?? `${initialY}%`,
+                  scale,
                 }}
                 drag={!isMobile}
                 whileDrag={{ scale: 0.7 }}
