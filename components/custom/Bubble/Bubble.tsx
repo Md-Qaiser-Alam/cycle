@@ -32,8 +32,6 @@ function Bubble({ containerRef, dropdownContentRef }: Tprops) {
     setMounted(true);
   }, []);
 
-  const [isMouseOver, setIsMouseOver] = useState(false);
-
   return (
     <>
       {bubbleConfig.map((e, i) => {
@@ -155,17 +153,18 @@ function Bubble({ containerRef, dropdownContentRef }: Tprops) {
                 }}
               />
             </HoverCardTrigger>
-
-            <HoverCardContent className="relative border-2 border-dashed border-[#721aff] overflow-hidden w-64 h-40 p-2">
-              <div className="relative w-full h-full">
-                <Image
-                  src={e.bannerSrc}
-                  alt="banner"
-                  fill
-                  className="object-cover rounded-md"
-                />
-              </div>
-            </HoverCardContent>
+            {isBrowser && (
+              <HoverCardContent className="relative border-2 border-dashed border-[#721aff] overflow-hidden w-64 h-40 p-2">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={e.bannerSrc}
+                    alt="banner"
+                    fill
+                    className="object-cover rounded-md"
+                  />
+                </div>
+              </HoverCardContent>
+            )}
           </HoverCard>
         );
       })}
