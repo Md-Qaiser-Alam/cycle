@@ -58,7 +58,7 @@ const navLinksData = [
 function Navbar() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   return (
-    <nav className="fixed top-0 inset-x-0 z-[99] px-4 py-3 bg-[rgba(255, 255, 255, 0.8)] backdrop-blur-md pt-8">
+    <nav className="fixed top-0 inset-x-0 z-[99] px-4 py-3 bg-[rgba(255, 255, 255, 0.8)] backdrop-blur-md pt-6">
       <div className="flex items-center justify-between max-w-[var(--breathing-width-1)] mx-auto px-4 md:px-8">
         {/* Logo */}
         <div className="cursor-pointer">
