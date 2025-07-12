@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased overflow-x-hidden md:overflow-x-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased overflow-x-hidden md:overflow-x-visible`}
       >
         {children}
       </body>
