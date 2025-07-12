@@ -45,25 +45,35 @@ function Bubble({ containerRef, dropdownContentRef }: Tprops) {
         const start = isBrowser ? pairIndex * step * (1 - overlapRatio) : 0;
         const end = isBrowser ? start + step : 0.5;
 
-        const scrollX = isBrowser
-          ? useTransform(
-              scrollYProgress,
-              [start, end],
-              [`${e.browserInitialX}%`, "0%"]
-            )
-          : undefined;
+        let scrollX, scrollY, scale;
 
-        const scrollY = isBrowser
-          ? useTransform(
-              scrollYProgress,
-              [start, end],
-              [`${e.browserInitialY}%`, "0%"]
-            )
-          : undefined;
-
-        const scale = isBrowser
-          ? useTransform(scrollYProgress, [start, end], [1, 0])
-          : 0.9;
+        if (isBrowser) {
+          scrollX = useTransform(
+            scrollYProgress,
+            [start, end],
+            [`${e.browserInitialX}%`, "0%"]
+          );
+          scrollY = useTransform(
+            scrollYProgress,
+            [start, end],
+            [`${e.browserInitialY}%`, "0%"]
+          );
+          scale = useTransform(scrollYProgress, [start, end], [1, 0]);
+        } else if (isMobile && i === 5) {
+          scrollX = useTransform(
+            scrollYProgress,
+            [0, 1],
+            [`${e.mobileInitialX}%`, "10%"]
+          );
+          scrollY = useTransform(
+            scrollYProgress,
+            [0, 1],
+            [`${e.mobileInitialY}%`, "20%"]
+          );
+          scale = useTransform(scrollYProgress, [0, 1], [0.9, 0.1]);
+        } else {
+          scale = 0.9;
+        }
 
         // motion values for drag position with initial values as numbers
         const initialX = e[isBrowser ? "browserInitialX" : "mobileInitialX"];
