@@ -58,7 +58,7 @@ export const bubbleConfig = [
       "https://cdn.prod.website-files.com/62b5b85dd560583e288cb389/65ee45159d94c555ff778e4e_Feedback%20Previewnotion.svg",
     className: "notion",
     browserInitialX: -580,
-    browserInitialY: -60,
+    browserInitialY: -63,
     mobileInitialX: -110,
     mobileInitialY: -640,
   },
