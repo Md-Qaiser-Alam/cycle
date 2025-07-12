@@ -45,8 +45,8 @@ function Main() {
 
       // Smooth scroll to ref when y = 200
       if (
-        y >= 200 &&
-        y <= 2000 &&
+        y === 200 &&
+        // y <= 2000 &&
         !isMotionScrolling &&
         isDown &&
         dropdownContentRef.current
@@ -72,7 +72,7 @@ function Main() {
         setShowProgress(true);
 
         // Progress Bar (0% at y=500 → 100% at y=1500)
-        const totalScrollProgressBar = 1500 - 500;
+        const totalScrollProgressBar = 3000 - 500;
         const currentScrolledProgressBar = y - 500;
         const currentProgressBarPercent = Math.min(
           (currentScrolledProgressBar / totalScrollProgressBar) * 100,
@@ -81,8 +81,8 @@ function Main() {
         setCurrentProgressBar(Math.round(currentProgressBarPercent));
 
         // Hero Opacity (100% at y=1000 → 0% at y=3000)
-        const totalScrollHero = 3000 - 1000;
-        const currentScrollHero = 3000 - y;
+        const totalScrollHero = 4000 - 1000;
+        const currentScrollHero = 4000 - y;
         const currentScrollHeroPercent = Math.min(
           currentScrollHero / totalScrollHero,
           1
@@ -136,17 +136,16 @@ function Main() {
       <div>
         <Navbar />
         <div className="h-10 md:h-32" />
-        <div className="flex flex-col items-center md:min-h-[500vh]">
+        <div className="flex flex-col items-center md:min-h-[700vh]">
           <div className="md:sticky md:top-32 space-y-7 relative w-screen pt-32 md:p-0">
-            <div className="h-screen w-full max-w-full absolute overflow-x-hidden inset-[0%] flex justify-center items-center">
-              <Bubble containerRef={containerRef} />
-            </div>
             <div className="space-y-32 md:space-y-7 flex flex-col justify-center items-center px-3">
               <Hero currentHeroOpacity={currentHeroOpacity} />
               <DragInput
                 showProgress={showProgress}
                 currentProgressBar={currentProgressBar}
                 currentHeroOpacity={currentHeroOpacity}
+                containerRef={containerRef}
+                dropdownContentRef={dropdownContentRef}
               />
             </div>
           </div>

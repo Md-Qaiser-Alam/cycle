@@ -1,21 +1,27 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import Bubble from "../Bubble/Bubble";
 
 type Tprops = {
   showProgress: boolean;
   currentProgressBar: number;
   currentHeroOpacity: number;
+  containerRef: any;
+  dropdownContentRef: any;
 };
 
 function DragInput({
   showProgress,
   currentProgressBar,
   currentHeroOpacity,
+  containerRef,
+  dropdownContentRef,
 }: Tprops) {
   return (
     <div
-      className="md:border border-[#0b08ad0f] rounded-md md:p-6 py-6 md:w-2xl w-[-webkit-fill-available]"
+      className="containerRef md:border border-[#0b08ad0f] rounded-md md:p-6 py-6 md:w-2xl w-[-webkit-fill-available]"
+      ref={containerRef}
       style={{ opacity: currentHeroOpacity + 0.5 }}
     >
       <div
@@ -32,7 +38,15 @@ function DragInput({
           className="absolute z-[-1] opacity-50"
         />
         <div className="flex justify-center items-center flex-col w-[inherit]">
-          <div className="sphere-anim" />
+          <div className="relative w-28">
+            <div className="sphere-anim" />
+          </div>
+          <div className="absolute md:fixed h-screen w-screen inset-0 flex justify-center items-center pt-28">
+            <Bubble
+              containerRef={containerRef}
+              dropdownContentRef={dropdownContentRef}
+            />
+          </div>
 
           {!showProgress ? (
             <p className="font-medium text-sm">
