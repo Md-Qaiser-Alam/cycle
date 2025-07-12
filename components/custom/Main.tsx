@@ -32,6 +32,7 @@ function Main() {
   const [isViewed, setIsViewed] = useState(false);
   const dropdownContentRef = useRef<HTMLDivElement | null>(null);
   const [currentIconSelect, setCurrentIconSelect] = useState<any>(null);
+  const [isDraggedOver, setIsDraggedOver] = useState(false);
 
   // scrolling Motion
   useEffect(() => {
@@ -102,7 +103,6 @@ function Main() {
   }, [isBrowser]);
 
   // Dropdown Content Motion
-
   useEffect(() => {
     if (!isBrowser) return;
     const handleScroll = () => {
@@ -122,6 +122,52 @@ function Main() {
     };
   }, [isBrowser, inView]);
 
+  // External Drag Detection
+  useEffect(() => {
+    if (!isBrowser) return;
+
+    let dragCounter = 0;
+
+    const handleDragEnter = (e: DragEvent) => {
+      e.preventDefault();
+      dragCounter++;
+      setIsDraggedOver(true);
+    };
+
+    const handleDragLeave = (e: DragEvent) => {
+      e.preventDefault();
+      dragCounter--;
+
+      // Only remove the effect when all drag events have left
+      if (dragCounter === 0) {
+        setIsDraggedOver(false);
+      }
+    };
+
+    const handleDragOver = (e: DragEvent) => {
+      e.preventDefault();
+    };
+
+    const handleDrop = (e: DragEvent) => {
+      e.preventDefault();
+      dragCounter = 0;
+      setIsDraggedOver(false);
+    };
+
+    // Add event listeners to document to catch all drag events
+    document.addEventListener("dragenter", handleDragEnter);
+    document.addEventListener("dragleave", handleDragLeave);
+    document.addEventListener("dragover", handleDragOver);
+    document.addEventListener("drop", handleDrop);
+
+    return () => {
+      document.removeEventListener("dragenter", handleDragEnter);
+      document.removeEventListener("dragleave", handleDragLeave);
+      document.removeEventListener("dragover", handleDragOver);
+      document.removeEventListener("drop", handleDrop);
+    };
+  }, [isBrowser]);
+
   const containerRef = useRef(null);
 
   const [mounted, setMounted] = useState(false);
@@ -140,12 +186,14 @@ function Main() {
           <div className="md:sticky md:top-32 space-y-7 relative w-screen pt-32 md:p-0">
             <div className="space-y-32 md:space-y-7 flex flex-col justify-center items-center px-3">
               <Hero currentHeroOpacity={currentHeroOpacity} />
+
               <DragInput
                 showProgress={showProgress}
                 currentProgressBar={currentProgressBar}
                 currentHeroOpacity={currentHeroOpacity}
                 containerRef={containerRef}
                 dropdownContentRef={dropdownContentRef}
+                isDraggedOver={isDraggedOver}
               />
             </div>
           </div>

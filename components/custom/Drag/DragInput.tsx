@@ -9,6 +9,7 @@ type Tprops = {
   currentHeroOpacity: number;
   containerRef: any;
   dropdownContentRef: any;
+  isDraggedOver: boolean;
 };
 
 function DragInput({
@@ -17,10 +18,15 @@ function DragInput({
   currentHeroOpacity,
   containerRef,
   dropdownContentRef,
+  isDraggedOver,
 }: Tprops) {
   return (
     <div
-      className="containerRef md:border border-[#0b08ad0f] rounded-md md:p-6 py-6 md:w-2xl w-[-webkit-fill-available]"
+      className={`containerRef md:border ${
+        isDraggedOver
+          ? "border-[#2020ff] border-3 border-dashed animate-pulse"
+          : "border-[#0b08ad0f]"
+      }  rounded-md md:p-6 py-6 md:w-2xl w-[-webkit-fill-available]`}
       ref={containerRef}
       style={{ opacity: currentHeroOpacity + 0.5 }}
     >
