@@ -188,8 +188,7 @@ function Main() {
           {" "}
           {/* further reduced from 400vh */}
           <div className="md:sticky md:top-32 space-y-7 relative w-screen pt-32 md:p-0">
-            <div className="space-y-12 md:space-y-10 flex flex-col justify-between md:justify-start items-center px-3 h-[70vh] pt-12 md:pt-0">
-              {" "}
+            <div className="space-y-12 md:space-y-10 flex flex-col justify-between md:justify-start items-center px-3 md:h-[70vh] gap-28 md:gap-0">
               {/* further reduced spacing */}
               <Hero currentHeroOpacity={currentHeroOpacity} />
               <DragInput
