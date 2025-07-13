@@ -23,7 +23,7 @@ export const bubbleConfig = [
     browserInitialX: 400,
     browserInitialY: -210,
     mobileInitialX: 100,
-    mobileInitialY: -570,
+    mobileInitialY: -340,
   },
   {
     name: "Intercom",
@@ -35,7 +35,7 @@ export const bubbleConfig = [
     browserInitialX: -400,
     browserInitialY: -130,
     mobileInitialX: -120,
-    mobileInitialY: -430,
+    mobileInitialY: -180,
   },
   {
     name: "Gong",
@@ -60,7 +60,7 @@ export const bubbleConfig = [
     browserInitialX: -580,
     browserInitialY: -63,
     mobileInitialX: -110,
-    mobileInitialY: -640,
+    mobileInitialY: -410,
   },
   {
     name: "Loom",
@@ -72,7 +72,7 @@ export const bubbleConfig = [
     browserInitialX: 470,
     browserInitialY: -5,
     mobileInitialX: 0,
-    mobileInitialY: -370,
+    mobileInitialY: -120,
   },
   {
     name: "Hubspot",
@@ -110,7 +110,7 @@ export const bubbleConfig = [
     browserInitialX: -300,
     browserInitialY: 200,
     mobileInitialX: 110,
-    mobileInitialY: -430,
+    mobileInitialY: -190,
   },
   {
     name: "Image",

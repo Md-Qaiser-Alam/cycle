@@ -44,10 +44,10 @@ function Main() {
       const y = window.scrollY;
       const isDown = y > currentPosition;
 
-      // Smooth scroll to ref when y = 200
+      // Smooth scroll to ref when y = 100 (further reduced)
       if (
         y === 200 &&
-        // y <= 2000 &&
+        y <= 1000 &&
         !isMotionScrolling &&
         isDown &&
         dropdownContentRef.current
@@ -56,8 +56,8 @@ function Main() {
 
         const targetOffsetTop = dropdownContentRef.current.offsetTop;
 
-        animate(y, targetOffsetTop - 100, {
-          duration: 3,
+        animate(y, targetOffsetTop - 50, {
+          duration: 1.8, // faster animation
           ease: "easeInOut",
           onUpdate: (value) => {
             window.scrollTo(0, value);
@@ -69,21 +69,22 @@ function Main() {
       }
 
       // Scroll progress bar in dragBox
-      if (y >= 500) {
+      if (y >= 300) {
+        // further reduced from 400
         setShowProgress(true);
 
-        // Progress Bar (0% at y=500 → 100% at y=1500)
-        const totalScrollProgressBar = 3000 - 500;
-        const currentScrolledProgressBar = y - 500;
+        // Progress Bar (0% at y=300 → 100% at y=1000) - more compressed range
+        const totalScrollProgressBar = 1300 - 300;
+        const currentScrolledProgressBar = y - 300;
         const currentProgressBarPercent = Math.min(
           (currentScrolledProgressBar / totalScrollProgressBar) * 100,
           100
         );
         setCurrentProgressBar(Math.round(currentProgressBarPercent));
 
-        // Hero Opacity (100% at y=1000 → 0% at y=3000)
-        const totalScrollHero = 4000 - 1000;
-        const currentScrollHero = 4000 - y;
+        // Hero Opacity (100% at y=600 → 0% at y=1400) - much more compressed range
+        const totalScrollHero = 1500 - 600;
+        const currentScrollHero = 1500 - y;
         const currentScrollHeroPercent = Math.min(
           currentScrollHero / totalScrollHero,
           1
@@ -109,7 +110,8 @@ function Main() {
       const y = window.scrollY;
 
       // causes animation only when scrolling down not up
-      if (y >= 0 && y <= 3000) {
+      if (y >= 0 && y <= 1500) {
+        // further reduced from 2000
         setIsViewed(false);
       }
     };
@@ -182,11 +184,14 @@ function Main() {
       <div>
         <Navbar />
         <div className="h-10 md:h-32" />
-        <div className="flex flex-col items-center md:min-h-[700vh]">
+        <div className="flex flex-col items-center md:min-h-[300vh]">
+          {" "}
+          {/* further reduced from 400vh */}
           <div className="md:sticky md:top-32 space-y-7 relative w-screen pt-32 md:p-0">
-            <div className="space-y-32 md:space-y-7 flex flex-col justify-center items-center px-3">
+            <div className="space-y-12 md:space-y-10 flex flex-col justify-between md:justify-start items-center px-3 h-[70vh] pt-12 md:pt-0">
+              {" "}
+              {/* further reduced spacing */}
               <Hero currentHeroOpacity={currentHeroOpacity} />
-
               <DragInput
                 showProgress={showProgress}
                 currentProgressBar={currentProgressBar}
@@ -200,13 +205,13 @@ function Main() {
         </div>
         {isBrowser && (
           <>
-            <div className="h-52" />
+            <div className="h-8" />
             <div ref={startDropdownMotionRef} className="h-1 w-full relative">
               <BgGradient />
             </div>
           </>
         )}
-
+        <div className="md:h-80" />
         {isBrowser && (
           <div
             ref={dropdownContentRef}
@@ -217,7 +222,7 @@ function Main() {
                 className="relative flex space-x-10 p-7 rounded-xl dashboard-copy-2"
                 initial={{ width: 0 }}
                 animate={{ width: "var(--breathing-width-2)" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               >
                 <div className="dashboard-shadow h-[90%] w-[90%] absolute inset-0 mx-auto my-auto" />
                 <DropdownContent
@@ -228,7 +233,7 @@ function Main() {
                   className="h-full flex-3 bg-transparent rounded-xl"
                   initial={{ background: "ffffff00", opacity: 0 }}
                   animate={{ background: "#ffff", opacity: 1 }}
-                  transition={{ duration: 1.2, delay: 1.5, ease: "easeInOut" }}
+                  transition={{ duration: 0.8, delay: 1.0, ease: "easeInOut" }}
                 >
                   <div className="grid grid-cols-2 grid-row-2 h-full rounded-md px-16 py-8">
                     <Slide1 />
@@ -263,7 +268,6 @@ function Main() {
           </Button>
           <MarqueSection />
         </div>
-        <div className="h-[100rem]"> </div>
       </div>
     </div>
   );

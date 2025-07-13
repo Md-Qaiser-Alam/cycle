@@ -67,10 +67,10 @@ function Bubble({ containerRef, dropdownContentRef }: Tprops) {
           );
           scrollY = useTransform(
             scrollYProgress,
-            [0, 1],
-            [`${e.mobileInitialY}%`, "20%"]
+            [0, 0.5],
+            [`${e.mobileInitialY}%`, "0%"]
           );
-          scale = useTransform(scrollYProgress, [0, 1], [0.9, 0.1]);
+          scale = useTransform(scrollYProgress, [0, 1], [1, 0]);
         } else {
           scale = 0.9;
         }

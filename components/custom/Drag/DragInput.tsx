@@ -41,13 +41,13 @@ function DragInput({
           alt=""
           fill
           objectFit="none"
-          className="absolute z-[-1] opacity-30"
+          className="absolute z-[-1] opacity-50"
         />
         <div className="flex justify-center items-center flex-col w-[inherit]">
           <div className="relative w-28">
             <div className="sphere-anim" />
           </div>
-          <div className="absolute md:fixed h-screen w-screen inset-0 flex justify-center top-56 md:top-0 md:items-center pt-28">
+          <div className="absolute md:fixed md:h-screen md:w-screen inset-0 flex justify-center items-center md:pt-28">
             <Bubble
               containerRef={containerRef}
               dropdownContentRef={dropdownContentRef}
