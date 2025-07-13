@@ -23,7 +23,7 @@ export const bubbleConfig = [
     browserInitialX: 400,
     browserInitialY: -210,
     mobileInitialX: 100,
-    mobileInitialY: -340,
+    mobileInitialY: -350,
   },
   {
     name: "Intercom",
